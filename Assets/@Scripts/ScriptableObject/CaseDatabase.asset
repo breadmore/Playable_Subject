@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6b99b149b7f0c40a5ed6ccfcc8782e, type: 3}
+  m_Name: CaseDatabase
+  m_EditorClassIdentifier: 
+  caseMaterialList:
+  - {fileID: 2100000, guid: f0b019e61c7767b4586a9f120d19d0e9, type: 2}
+  - {fileID: 2100000, guid: b1268e5cad4bede46a73c2b1311e00f5, type: 2}
+  - {fileID: 2100000, guid: b715481a7d2f4374996e41ca06ba24eb, type: 2}
+  - {fileID: 2100000, guid: d98c275624767e24cb06820122a92cfb, type: 2}
+  - {fileID: 2100000, guid: ce299cd9d415be74eb5849c5e3ffb29d, type: 2}
+  - {fileID: 2100000, guid: 1c5c2409fb6f57740a7ba398a5fe97c1, type: 2}
+  - {fileID: 2100000, guid: e4289901f7d456e41a9621e86238cdf0, type: 2}
+  - {fileID: 2100000, guid: 9c375d2915044b14d882dc2dd397fec3, type: 2}
+  - {fileID: 2100000, guid: ff17265493234b346b321ff36eaa52ca, type: 2}
