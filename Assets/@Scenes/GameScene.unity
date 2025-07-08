@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 405476187}
   - component: {fileID: 405476186}
   m_Layer: 5
-  m_Name: Message
+  m_Name: GoodText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -864,8 +864,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 083c4b8dac1550e41bd4bf2ae5b8ef3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageBack: {fileID: 1297095523}
-  message: {fileID: 405476186}
+  textBack: {fileID: 1297095523}
+  goodText: {fileID: 405476186}
 --- !u!4 &604848611
 Transform:
   m_ObjectHideFlags: 0
@@ -1326,7 +1326,7 @@ GameObject:
   - component: {fileID: 1297095526}
   - component: {fileID: 1297095525}
   m_Layer: 5
-  m_Name: MessageBackGround
+  m_Name: TextBackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

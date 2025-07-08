@@ -318,12 +318,13 @@ public class GameManager : Singleton<GameManager>
         if (!layerCases.ContainsKey(layer)) return;
 
         List<Case> casesToRemove = new List<Case>(layerCases[layer]);
+        layerCases.Remove(layer);
+
         foreach (Case c in casesToRemove)
         {
             if (c == null) continue;
 
-            EffectManager.Instance.PopClearEffect(c.transform.position);
-
+            // 굿즈 제거
             if (!c.IsEmpty())
             {
                 Goods goods = c.GetCurrentGoods();
@@ -333,6 +334,8 @@ public class GameManager : Singleton<GameManager>
                     Destroy(goods.gameObject);
                 }
             }
+
+            Vector3 effectPos = c.transform.position;
             Destroy(c.gameObject);
 
             for (int i = 0; i < cases.Length; i++)
@@ -343,8 +346,10 @@ public class GameManager : Singleton<GameManager>
                     break;
                 }
             }
+
+            EffectManager.Instance.PopClearEffect(effectPos);
         }
-        layerCases.Remove(layer);
+
         MoveLayersDown(layer + 1);
     }
 
@@ -352,21 +357,39 @@ public class GameManager : Singleton<GameManager>
     {
         for (int layer = startLayer; layer < pyramidLayers; layer++)
         {
-            if (!layerCases.ContainsKey(layer)) continue;
-            foreach (var c in layerCases[layer])
+            if (!layerCases.TryGetValue(layer, out var caseList)) continue;
+
+            foreach (var c in caseList.ToArray())
             {
-                if (c == null) continue;
+                if (c == null || !c.gameObject) continue;
 
                 Vector3 newPos = c.transform.position;
                 newPos.y -= spacingY;
 
-                c.GetCurrentGoods().transform.SetParent(c.goodsPosition);
-                c.transform.DOMoveY(newPos.y, 0.3f).SetEase(Ease.OutCubic)
-                    .OnComplete(() =>
-                    {
-                        c.GetCurrentGoods().transform.SetParent(null);
-                        c.GetCurrentGoods().startPosition = c.GetCurrentGoods().transform.position;
-                    });
+                if (!c.IsEmpty() && c.GetCurrentGoods() != null)
+                {
+                    Goods goods = c.GetCurrentGoods();
+                    goods.transform.SetParent(null);
+
+                    c.transform.DOMoveY(newPos.y, 0.3f)
+                        .SetEase(Ease.OutCubic)
+                        .OnUpdate(() =>
+                        {
+                            if (goods != null)
+                                goods.transform.position = c.goodsPosition.position;
+                        })
+                        .OnComplete(() =>
+                        {
+                            if (goods != null)
+                                goods.startPosition = c.goodsPosition.position;
+                        });
+                }
+                else // 굿즈가 없는 경우
+                {
+                    c.transform.DOMoveY(newPos.y, 0.3f)
+                        .SetEase(Ease.OutCubic);
+
+                }
             }
         }
     }
