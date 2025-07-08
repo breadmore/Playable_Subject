@@ -226,10 +226,10 @@
 
                         Vector3[] verts = 
                         {
-                            new(-size, -size, 0),
-                            new(-size, size, 0),
-                            new(size, size, 0),
-                            new(size, -size, 0)
+                            new Vector3(-size, -size, 0),
+                            new Vector3(-size, size, 0),
+                            new Vector3(size, size, 0),
+                            new Vector3(size, -size, 0)
                         };
 
                         Quaternion particleRotation = Quaternion.Euler(particle.rotation3D);

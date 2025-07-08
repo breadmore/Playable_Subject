@@ -1,0 +1,388 @@
+{
+  "BuildID": "16e9b518-af70-4bf1-8f08-74b895160339",
+  "Command": "project:deploy",
+  "ProjectID": "1ea3bb43f778449c78ecaf64beaf075a",
+  "ProjectStateHash": "bbd700cb7dfe4ee2b2d946048cb9643a9089c7736c62760e949d4c9caac2063e",
+  "StageCompletedAt": 3,
+  "EarliestFatalError": 0,
+  "StartTime": 1751983331886,
+  "EndTime": 1751983349762,
+  "PlaygroundUserID": 25441,
+  "OperatingSystem": "win32",
+  "UnityPackageID": null,
+  "TargetPlatform": "playground",
+  "UnityVersion": "2022.3.60f1\r",
+  "LunaVersion": "6.3.0",
+  "LogCount": 12,
+  "Logs": [
+    {
+      "LogID": "be887ec0-f28d-44a7-a799-babb99b3cb9f",
+      "Order": 9,
+      "Timestamp": 1751983349883,
+      "Stage": 3,
+      "ErrorType": 1,
+      "ErrorCode": "LP3006",
+      "Description": "You are not using the Luna API: Playable.InstallFullGame",
+      "Details": [
+        "You are not using the Luna API: Playable.InstallFullGame. Some ad networks require these calls. Please add these calls to ensure your playable works on all ad networks. Check documentation for more information."
+      ],
+      "DescriptionValues": [
+        "Playable",
+        "InstallFullGame"
+      ],
+      "DetailsValues": [
+        "Playable",
+        "InstallFullGame"
+      ],
+      "LogCount": 1,
+      "LinePosition": null,
+      "FilePath": "",
+      "ClassName": "",
+      "MemberName": "",
+      "Severity": 0
+    },
+    {
+      "LogID": "10f5e331-7866-480d-a9be-e596254ea745",
+      "Order": 9,
+      "Timestamp": 1751983349884,
+      "Stage": 3,
+      "ErrorType": 1,
+      "ErrorCode": "LP3015",
+      "Description": "You are not the Game Ended API: LifeCycle.GameEnded",
+      "Details": [
+        "You are not using the Game Ended API: LifeCycle.GameEnded. Some ad networks require this call, please add the event to avoid the ad being rejected."
+      ],
+      "DescriptionValues": [
+        "LifeCycle",
+        "GameEnded"
+      ],
+      "DetailsValues": [
+        "LifeCycle",
+        "GameEnded"
+      ],
+      "LogCount": 1,
+      "LinePosition": null,
+      "FilePath": "",
+      "ClassName": "",
+      "MemberName": "",
+      "Severity": 0
+    },
+    {
+      "LogID": "d1acfe14-334b-409d-9814-c6b147e6a13a",
+      "Order": 9,
+      "Timestamp": 1751983349884,
+      "Stage": 3,
+      "ErrorType": 3,
+      "ErrorCode": "LP3007",
+      "Description": "You are not using any custom events",
+      "Details": [
+        "You are not using any custom events. It is recommended to use custom events to have a better understanding of the playable."
+      ],
+      "DescriptionValues": [
+        ""
+      ],
+      "DetailsValues": [
+        ""
+      ],
+      "LogCount": 1,
+      "LinePosition": null,
+      "FilePath": "",
+      "ClassName": "",
+      "MemberName": "",
+      "Severity": 0
+    },
+    {
+      "LogID": "ab82e716-2c6c-4383-b475-99e97c7b6f34",
+      "Order": 9,
+      "Timestamp": 1751983349885,
+      "Stage": 3,
+      "ErrorType": 3,
+      "ErrorCode": "LP3011",
+      "Description": "You are not using any LunaPlaygroundFields attributes.",
+      "Details": [
+        "You are not using any LunaPlaygroundFields attributes, it allows you to configure your playable to different concepts to find the best variation, which can drastically improve playable performance on all ad networks."
+      ],
+      "DescriptionValues": null,
+      "DetailsValues": null,
+      "LogCount": 1,
+      "LinePosition": null,
+      "FilePath": "",
+      "ClassName": "",
+      "MemberName": "",
+      "Severity": 0
+    },
+    {
+      "LogID": "8b2c747d-b94b-4978-b241-f2d69faffa43",
+      "Order": 0,
+      "Timestamp": 1751983332597,
+      "Stage": 1,
+      "ErrorType": 0,
+      "ErrorCode": "LP1030",
+      "Description": "TMP Font Asset uses unsupported 'Atlas Population Mode'",
+      "Details": [
+        "TMP Font Asset '{0}' uses Atlas Population Mode '{1}' which is not supported"
+      ],
+      "DescriptionValues": [],
+      "DetailsValues": [
+        "LiberationSans SDF - Fallback",
+        "Dynamic"
+      ],
+      "LogCount": 1,
+      "LinePosition": 0,
+      "FilePath": "",
+      "ClassName": "",
+      "MemberName": "",
+      "Severity": 0
+    },
+    {
+      "LogID": "249d14bb-0df5-4f52-ac65-41dcaedef070",
+      "Order": 1,
+      "Timestamp": 1751983335378,
+      "Stage": 1,
+      "ErrorType": 2,
+      "ErrorCode": "LP1016",
+      "Description": "Extensive usage of Rigidbody Component",
+      "Details": [
+        "There is extensive usage of the Rigidbody component.\nExcessive usage of any component can be detrimental to performance on lower and in some cases higher end devices, consider reducing the amount the component is used.\nRecommended count: 10, current count 45."
+      ],
+      "DescriptionValues": [
+        "Rigidbody"
+      ],
+      "DetailsValues": [
+        "Rigidbody",
+        "10",
+        "45"
+      ],
+      "LogCount": 1,
+      "LinePosition": 0,
+      "FilePath": "",
+      "ClassName": "",
+      "MemberName": "",
+      "Severity": 0
+    },
+    {
+      "LogID": "2f8ebc63-1cdc-40cf-8065-bc978d0e7945",
+      "Order": 2,
+      "Timestamp": 1751983335379,
+      "Stage": 1,
+      "ErrorType": 1,
+      "ErrorCode": "LP1023",
+      "Description": "Too many files for facebook platform",
+      "Details": [
+        "Too many files for facebook platform in use ($107) only $100 available"
+      ],
+      "DescriptionValues": [],
+      "DetailsValues": [
+        "107",
+        "100"
+      ],
+      "LogCount": 1,
+      "LinePosition": 0,
+      "FilePath": "",
+      "ClassName": "",
+      "MemberName": "",
+      "Severity": 0
+    },
+    {
+      "LogID": "a71b3f8d-d595-4b13-b62a-49986115d8fa",
+      "Order": 3,
+      "Timestamp": 1751983335386,
+      "Stage": 1,
+      "ErrorType": 0,
+      "ErrorCode": "LP1027",
+      "Description": "This DOTween version is not supported",
+      "Details": [
+        "The incorrect DOTween version for this Unity version is in use, please update or downgrade to the recommended version {0} in the package manager. Go to Window → Package Manager."
+      ],
+      "DescriptionValues": [],
+      "DetailsValues": [
+        ""
+      ],
+      "LogCount": 1,
+      "LinePosition": 0,
+      "FilePath": "",
+      "ClassName": "",
+      "MemberName": "",
+      "Severity": 0
+    },
+    {
+      "LogID": "4d1350f0-cdb7-48da-8e4c-f176cd85b591",
+      "Order": 4,
+      "Timestamp": 1751983335386,
+      "Stage": 1,
+      "ErrorType": 0,
+      "ErrorCode": "LP1015",
+      "Description": "This TMP version is not fully supported",
+      "Details": [
+        "The incorrect Text Mesh Pro for this Unity version is in use, please update or downgrade to the recommended version {0} in the package manager. Go to Window → Package Manager"
+      ],
+      "DescriptionValues": [],
+      "DetailsValues": [
+        ""
+      ],
+      "LogCount": 1,
+      "LinePosition": 0,
+      "FilePath": "",
+      "ClassName": "",
+      "MemberName": "",
+      "Severity": 0
+    },
+    {
+      "LogID": "176fe1c9-10d3-4eb4-bdb2-34e143ed48de",
+      "Order": 5,
+      "Timestamp": 1751983335387,
+      "Stage": 1,
+      "ErrorType": 0,
+      "ErrorCode": "LP1032",
+      "Description": "Package(s) is not supported in Luna",
+      "Details": [
+        "Currently package(s) com.unity.timeline are not supported in Luna. We recommend you to remove it and workaround it's functionality."
+      ],
+      "DescriptionValues": [
+        "com.unity.timeline (1.7.6)"
+      ],
+      "DetailsValues": [
+        "com.unity.timeline"
+      ],
+      "LogCount": 1,
+      "LinePosition": 0,
+      "FilePath": "C:/Users/lepo3/Documents/Playable_Subject/Packages\\manifest.json",
+      "ClassName": "",
+      "MemberName": "",
+      "Severity": 0
+    },
+    {
+      "LogID": "5b5c112e-af69-4fa9-b6e1-cd656d5dcc1b",
+      "Order": 6,
+      "Timestamp": 1751983335388,
+      "Stage": 1,
+      "ErrorType": 3,
+      "ErrorCode": "LP1002",
+      "Description": "Repeat wrap mode used on a texture with non power-of-two dimensions, this might not be rendered correctly.",
+      "Details": [
+        "Repeat wrap mode used on 'LiberationSans SDF Atlas' texture at 'Assets/Resources/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset' with non power-of-two dimensions, this might not be rendered correctly."
+      ],
+      "DescriptionValues": [],
+      "DetailsValues": [
+        "LiberationSans SDF Atlas",
+        "Assets/Resources/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset"
+      ],
+      "LogCount": 1,
+      "LinePosition": 0,
+      "FilePath": "Assets/Resources/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset",
+      "ClassName": "",
+      "MemberName": "",
+      "Severity": 0
+    },
+    {
+      "LogID": "7c8e8136-ae97-4427-917d-bd07f350caa5",
+      "Order": 7,
+      "Timestamp": 1751983335388,
+      "Stage": 1,
+      "ErrorType": 2,
+      "ErrorCode": "LP1010",
+      "Description": "Looks like a collider was scaled, this might affect performance.",
+      "Details": [
+        "Pepero",
+        "Case",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Case(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)",
+        "Pepero(Clone)"
+      ],
+      "DescriptionValues": [],
+      "DetailsValues": [],
+      "LogCount": 91,
+      "LinePosition": 0,
+      "FilePath": "",
+      "ClassName": "",
+      "MemberName": "",
+      "Severity": 0
+    }
+  ]
+}

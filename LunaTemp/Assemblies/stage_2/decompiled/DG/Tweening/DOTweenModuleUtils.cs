@@ -26,7 +26,7 @@ namespace DG.Tweening
 
 			public static bool HasRigidbody2D(Component target)
 			{
-				return target.GetComponent<Rigidbody2D>() != null;
+				return false;
 			}
 
 			
@@ -47,15 +47,6 @@ namespace DG.Tweening
 					{
 						rBodyFoundAndTweened = true;
 						t = (isLocal ? rBody.DOLocalPath(path, duration, pathMode) : rBody.DOPath(path, duration, pathMode));
-					}
-				}
-				if (!rBodyFoundAndTweened && tweenRigidbody)
-				{
-					Rigidbody2D rBody2D = target.GetComponent<Rigidbody2D>();
-					if (rBody2D != null)
-					{
-						rBodyFoundAndTweened = true;
-						t = (isLocal ? rBody2D.DOLocalPath(path, duration, pathMode) : rBody2D.DOPath(path, duration, pathMode));
 					}
 				}
 				if (!rBodyFoundAndTweened)

@@ -19,9 +19,9 @@ public class EffectManager : Singleton<EffectManager>
     public Image goodImage;
 
     [Header("Fade Settings")]
-    public float fadeInDuration = 0.25f;
-    public float visibleDuration = 0.5f;
-    public float fadeOutDuration = 0.25f;
+    public float fadeInDuration = 0.15f;
+    public float visibleDuration = 0.3f;
+    public float fadeOutDuration = 0.15f;
 
     [Header("Pool Settings")]
     public int poolSize = 9;
@@ -30,10 +30,8 @@ public class EffectManager : Singleton<EffectManager>
 
     public Transform effectsPoolParent;
 
-    protected override void Awake()
+    private void Start()
     {
-        base.Awake();
-
         bgmSource.loop = true;
         bgmSource.playOnAwake = false;
         sfxSource.playOnAwake = false;
@@ -115,12 +113,29 @@ public class EffectManager : Singleton<EffectManager>
 
     private IEnumerator FadeInOutGoodImage(Image img)
     {
-        yield return img.DOFade(1f, fadeInDuration).WaitForCompletion();
+        yield return StartCoroutine(FadeImageAlpha(img, 0f, 1f, fadeInDuration));
 
         yield return new WaitForSeconds(visibleDuration);
 
-        yield return img.DOFade(0f, fadeOutDuration).WaitForCompletion();
+        yield return StartCoroutine(FadeImageAlpha(img, 1f, 0f, fadeOutDuration));
 
         img.gameObject.SetActive(false);
+    }
+
+    private IEnumerator FadeImageAlpha(Image img, float fromAlpha, float toAlpha, float duration)
+    {
+        float time = 0f;
+        Color color = img.color;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            float t = time / duration;
+            float alpha = Mathf.Lerp(fromAlpha, toAlpha, t);
+            img.color = new Color(color.r, color.g, color.b, alpha);
+            yield return null;
+        }
+
+        img.color = new Color(color.r, color.g, color.b, toAlpha);
     }
 }

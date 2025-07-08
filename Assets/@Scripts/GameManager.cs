@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using UnityEditor;
 public class GameManager : Singleton<GameManager>
 {
     [Header("Prefabs")]
@@ -20,8 +19,8 @@ public class GameManager : Singleton<GameManager>
     public GoodsDatabase goodsDatabase;
 
     private Case[] cases;
-    private List<Goods> spawnedGoods = new();
-    private Dictionary<int, List<Case>> layerCases = new();
+    private List<Goods> spawnedGoods = new List<Goods>();
+    private Dictionary<int, List<Case>> layerCases = new Dictionary<int, List<Case>>();
 
     public bool IsInitialized { get; private set; } = false;
 
@@ -39,6 +38,13 @@ public class GameManager : Singleton<GameManager>
         yield return null;
 
         IsInitialized = true;
+    }
+
+    public void Start()
+    {
+        GeneratePyramid();
+        SpawnGoods();
+        ShuffleGoods();
     }
 
     public void GeneratePyramid()

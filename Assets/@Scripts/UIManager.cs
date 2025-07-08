@@ -16,8 +16,8 @@ public class UIManager : Singleton<UIManager>
 
     private void Start()
     {
-        RectTransform rect = goodText.GetComponent<RectTransform>();
-        originalMessageY = rect.anchoredPosition.y;
+        Transform textTransform = goodText.transform;
+        originalMessageY = textTransform.position.y;
         StartMessageFloating();
     }
 
@@ -37,10 +37,21 @@ public class UIManager : Singleton<UIManager>
     {
         if (goodText == null) return;
 
-        RectTransform rect = goodText.GetComponent<RectTransform>();
-        rect.anchoredPosition = new Vector2(rect.anchoredPosition.x, originalMessageY); //항상 초기값으로 복구
+        Transform textTransform = goodText.transform;
 
-        floatingTween = rect.DOAnchorPosY(originalMessageY + 20f, 1f)
+        // Kill any existing tween
+        if (floatingTween != null && floatingTween.IsActive())
+            floatingTween.Kill();
+
+        // Reset to original position
+        textTransform.position = new Vector3(
+            textTransform.position.x,
+            originalMessageY,
+            textTransform.position.z
+        );
+
+        // Floating using DOMoveY (world position)
+        floatingTween = textTransform.DOMoveY(originalMessageY + 10f, 1f)
             .SetLoops(-1, LoopType.Yoyo)
             .SetEase(Ease.InOutSine);
     }
